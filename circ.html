@@ -1,0 +1,134 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+	// change the default namespace for the CreateJS libraries:
+	var createjs1 = createjs1||{};
+	var createjs = createjs1;
+</script>
+<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+<script src="http://code.createjs.com/tweenjs-0.4.0.min.js"></script>
+<script src="http://code.createjs.com/movieclip-0.6.0.min.js"></script>
+<script src="http://code.createjs.com/preloadjs-0.3.0.min.js"></script>
+<script src="circ.js"></script>
+<script src="js/libreria.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/circ_il.png", id:"circ_il"},
+		{src:"images/cursor.png", id:"cursor"}
+	];
+
+	var loader = new createjs1.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.circ();
+
+	stage = new createjs1.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs1.Ticker.setFPS(45);
+	createjs1.Ticker.addEventListener("tick", stage);
+}
+</script>
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+</style>
+</head>
+
+<body onload="init();">
+<div id="cont">
+  <canvas id="canvas" width="55" height="60"></canvas>
+  <div id="test"></div>
+</div>    
+</body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+	// change the default namespace for the CreateJS libraries:
+	var createjs1 = createjs1||{};
+	var createjs = createjs1;
+</script>
+<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+<script src="http://code.createjs.com/tweenjs-0.4.0.min.js"></script>
+<script src="http://code.createjs.com/movieclip-0.6.0.min.js"></script>
+<script src="http://code.createjs.com/preloadjs-0.3.0.min.js"></script>
+<script src="circ.js"></script>
+<script src="js/libreria.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/circ_il.png", id:"circ_il"},
+		{src:"images/cursor.png", id:"cursor"}
+	];
+
+	var loader = new createjs1.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.circ();
+
+	stage = new createjs1.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs1.Ticker.setFPS(45);
+	createjs1.Ticker.addEventListener("tick", stage);
+}
+</script>
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+</style>
+</head>
+
+<body onload="init();">
+<div id="cont">
+  <canvas id="canvas" width="55" height="60"></canvas>
+  <div id="test"></div>
+</div>    
+</body>
+>>>>>>> origin/master
+</html>
