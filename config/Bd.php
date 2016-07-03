@@ -22,7 +22,7 @@
 		}
 		
 		function ejecutar(){
-			$mysqli = new mysqli(null, 'root', 'apolo0', 'autonoma', null, '/cloudsql/uautonoma-1244:ua-php');
+			$mysqli = new mysqli('/cloudsql/uautonoma-1244:ua-php', 'root', 'apolo0', 'UA');
 			if (!$resultado = $mysqli->query($this->sql)){
 				echo "Falló la consulta: (" . $mysqli->errno . ") " . $mysqli->error;	
 				//echo $this->sql;
