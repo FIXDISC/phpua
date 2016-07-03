@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -186,5 +184,4 @@ function handleComplete() {
 inc = document.getElementById('incidentes');
 cargarContenido('tabla1.php','incidentes');
 </script>
->>>>>>> origin/master
 </html>

@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 	define("SERVER", "null"); //<----- es el ODBC, no el servidor!!!
 	
-	define("BASE", "");	define("USUARIO", "root");	define("PASS", "");
+	define("BASE", "");	define("USUARIO", "root");	define("PASS", "apolo0");
 //	define("BASE", "ee000478_fixdisc"); define("USUARIO", "ee000478_fixdisc"); define("PASS", "Apolo011");	
 	
 	class Bd{
@@ -18,11 +18,11 @@
 		}
 		
 		function desconectar(){
-			$mysqli_close($mysqli);
+			$mysqli=null;
 		}
 		
 		function ejecutar(){
-			$mysqli = new mysqli('localhost', 'root', 'apolo0', 'autonoma');
+			$mysqli = new mysqli('104.196.153.141', 'root', 'apolo0', 'UA');
 			if (!$resultado = $mysqli->query($this->sql)){
 				echo "Falló la consulta: (" . $mysqli->errno . ") " . $mysqli->error;	
 				//echo $this->sql;

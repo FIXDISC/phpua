@@ -10,6 +10,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $nombres = $nombres.",".($row['nombre']." ".$row['apellidop']);  
 }
+$bd->desconectar();
 
 $bd = new Bd();
 $bd->sql = "SELECT nombre FROM ua_inventario";
@@ -17,6 +18,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $nombresi = $nombresi.",".($row['nombre']);  
 }
+$bd->desconectar();
 
 $bd = new Bd();
 $bd->sql = "SELECT * FROM ua_cargos";
@@ -24,7 +26,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $nombres = $nombres.",".($row['nombre'])." ".($row['apellidop']);  
 }
-
+$bd->desconectar();
 
 $areas = "";
 $bd = new Bd();
@@ -33,6 +35,7 @@ $bd->ejecutar();
 while($row=$bd->fetch_row()){
   $areas = $areas.$row['nombre_corto']." (".$row['nombre'].")".",";
 }
+$bd->desconectar();
 
 $incidentes = "";
 $bd = new Bd();
@@ -41,6 +44,8 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $incidentes = $incidentes.",".c_sp($row['incidente']);
 }
+$bd->desconectar();
+
 $causas = "";
 $bd = new Bd();
 $bd->conectar();
@@ -49,6 +54,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $causas = $causas.",".$row['causa'];
 }
+$bd->desconectar();
 
 $acciones = "";
 $bd = new Bd();
@@ -58,6 +64,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $acciones = $acciones.",".$row['accion'];
 }
+$bd->desconectar();
 
 $dependencia = "";
 $bd = new Bd();
@@ -66,6 +73,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $dependencia = $dependencia.",".c_en($row['nombre']);  
 }
+$bd->desconectar();
 
 $dependencia_corto = "";
 $bd = new Bd();
@@ -74,7 +82,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $dependencia_corto = $dependencia_corto.",".c_en($row['nombre_corto']);  
 }
-
+$bd->desconectar();
 
 $ips = "";
 $bd = new Bd();
@@ -83,6 +91,7 @@ $bd->ejecutar();
 while($row=$bd->fetch_row()){
   $ips = $ips.$row['ip'].",";
 }
+$bd->desconectar();
 
 $marcas = "";
 $bd = new Bd();
@@ -91,6 +100,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $marcas = $marcas.",".c_en($row['marca']);  
 }
+$bd->desconectar();
 
 $modelos = "";
 $bd = new Bd();
@@ -99,6 +109,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $modelos = $modelos.",".c_en($row['modelo']);  
 }
+$bd->desconectar();
 
 $procesadores = "";
 $bd = new Bd();
@@ -107,6 +118,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $procesadores = $procesadores.",".c_en($row['procesador']);  
 }
+$bd->desconectar();
 
 $hdds = "";
 $bd = new Bd();
@@ -115,6 +127,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $hdds = $hdds.",".c_en($row['hdd']);  
 }
+$bd->desconectar();
 
 $rams = "";
 $bd = new Bd();
@@ -123,6 +136,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $rams = $rams.",".c_en($row['ram']);  
 }
+$bd->desconectar();
 
 $sos = "";
 $bd = new Bd();
@@ -131,6 +145,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $sos = $sos.",".c_en($row['so']);  
 }
+$bd->desconectar();
 
 $series = "";
 $bd = new Bd();
@@ -139,6 +154,7 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $series = $series.",".c_en($row['serie']);  
 }
+$bd->desconectar();
 
 $activos = "";
 $bd = new Bd();
@@ -147,6 +163,8 @@ $bd->ejecutar();
 while($row = $bd->fetch_row()){
   $activos = $activos.",".c_en($row['activo_fijo']);  
 }
+$bd->desconectar();
+
 ?>
 
 <html>
@@ -950,4 +968,3 @@ cargarContenido('login.php?val=1','cont');
 </script>
 
 </html>
->>>>>>> origin/master

@@ -3,11 +3,47 @@ version: 1
 runtime: php55
 api_version: 1
 threadsafe: yes
+instance_class: B8
+manual_scaling:
+  instances: 5
 
 handlers:
-
 - url: /css
   static_dir: css
 
-- url: /.*
+- url: /img
+  static_dir: img
+
+- url: /js
+  static_dir: js
+
+- url: /js1
+  static_dir: js1
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /*
   script: index.php
+
+- url: /login.php
+  script: login.php
+
+- url: /grafico.php
+  script: grafico.php
+
+- url: /tabla.php
+  script: tabla.php
+
+- url: /tabla1.php
+  script: tabla1.php
+
+- url: /alertas.php
+  script: alertas.php
+
+- url: /incidentes.php
+  script: incidentes.php
+
+- url: /PV_resp.php
+  script: PV_resp.php

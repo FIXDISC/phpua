@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 date_default_timezone_set("America/Santiago");
 include_once('config/Bd.php');
@@ -380,5 +379,4 @@ $hora_act = date ("H:i", $hora);
 </table>
 </div>
 </body>
->>>>>>> origin/master
 </html>
